@@ -1,0 +1,30 @@
+.spacing{
+    padding: 10px;
+}
+
+.spacing2{
+    padding: 185px;
+}
+
+.fs1{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.indentlist{
+    text-indent: 5%;
+}
+
+.colors{
+    color: black;
+}
+
+.card.colors3{
+    background-color: lightgrey;
+}
+
+.bgcolor{
+    background-color: lightgrey;
+}

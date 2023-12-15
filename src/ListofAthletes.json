@@ -1,0 +1,78 @@
+[
+    {
+        "fullname": "Jane Doe",
+        "firstname": "Jane",
+        "middlename": "",
+        "lastname": "Doe",
+        "suffix":"",
+        "nickname":"",
+        "phone":"(102)-394-5867",
+        "class":"2024",
+        "teams":["Women's Basketball"],
+        "email":"janedoe123@oxy.edu",
+        "oxyid":"01010101",
+        "allergies":[""],
+        "medical":["Asthma","Migraines"],
+        "address":"123 Abc Lane, Las Vegas, NV, 89084",
+        "dob":"01/01/2002",
+        "injuries": [{
+            "injdate":"",
+            "rptdate":"",
+            "team":"",
+            "bodypart":"",
+            "injury":"",
+            "side":"",
+            "trainer":"",
+            "status":"",
+            "during":"",
+            "reinjury":"",
+            "emsrequired":"",
+            "notes":""
+        }],
+        "rehab": [
+            {
+                "inpdate":"",
+                "link":"",
+                "trainer":"",
+                "notes":""
+            }
+        ]
+    },
+    {
+        "fullname": "Johnny Appleseed",
+        "firstname": "Johnny",
+        "middlename": "Bob",
+        "lastname": "Appleseed",
+        "suffix":"Jr.",
+        "nickname":"JB",
+        "phone":"(123)-456-7890",
+        "class":"2027",
+        "teams":["Men's Water Polo", "Men's Track & Field"],
+        "email":"appleseedtotrees@oxy.edu",
+        "oxyid":"10101010",
+        "allergies":["Peanuts"],
+        "medical":[""],
+        "address":"456 Xyz Drive, Los Angeles, CA, 90041",
+        "dob":"10/20/2004",
+        "injuries": [{
+            "injdate":"09/13/2022",
+            "rptdate":"09/13/2022",
+            "team":"Men's Water Polo",
+            "bodypart":"Leg",
+            "injury":"Hamstring Strain",
+            "side":"Right",
+            "trainer":"Oswald Tiger",
+            "status":"Current",
+            "during":"Practice",
+            "reinjury":"No",
+            "emsrequired":"No",
+            "notes":"Only experiences pain when running"
+        }],
+        "rehab": [{
+            "inpdate":"",
+            "link":"",
+            "trainer":"",
+            "notes":""
+        }]
+    }
+]

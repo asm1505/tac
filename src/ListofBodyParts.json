@@ -1,0 +1,111 @@
+[
+    {
+        "bodypart":"Abdomen/Chest",
+        "bpinjuries":["Abdomen Fracture","Rib Fracture","Abdomen Strain","Contusion","Wound"]
+    },
+    {
+        "bodypart":"Ankle/Foot",
+        "bpinjuries":["Achilles Tendon","Ankle Fracture","Ankle Sprain","Athlete's Foot","Contusion","Dislocation","Foot Fracture","High Ankle Sprain","Plantar Fasciitis","Wound"]
+    },
+    {
+        "bodypart":"Back/Neck",
+        "bpinjuries":[
+            "Burners/Stingers",
+            "Cervial Strain",
+            "Cervical Sprain",
+            "Contusion",
+            "Pinched Nerve",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Elbow",
+        "bpinjuries":[
+            "Contusion",
+            "Dislocation",
+            "Fracture",
+            "Hyperextension",
+            "Sprain",
+            "Strain",
+            "Tennis Elbow",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Groin/Hip",
+        "bpinjuries":[
+            "Contusion",
+            "Groin Strain",
+            "Hip Dislocation",
+            "Hip Fracture",
+            "Hip Sprain",
+            "Hip Strain",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Hand/Wrist",
+        "bpinjuries":[
+            "Contusion",
+            "Finger Dislocation",
+            "Fracture",
+            "Hand Strain",
+            "Hand Sprain",
+            "Wound",
+            "Wrist Sprain",
+            "Wrist Strain"
+        ]
+    },
+    {
+        "bodypart":"Head",
+        "bpinjuries":[
+            "Concussion",
+            "Contusion",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Knee",
+        "bpinjuries":[
+            "ACL",
+            "Arthritis",
+            "Contusion",
+            "Dislocation",
+            "Fracture",
+            "Hyperextension",
+            "ITBS",
+            "Meniscus Tear",
+            "MCL",
+            "Patellar Tendinopathy",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Leg/Thigh",
+        "bpinjuries":[
+            "Contusion",
+            "Calf Strain",
+            "Dislocation",
+            "Fracture",
+            "Hamstring Strain",
+            "Hyperextension",
+            "Quadricep Strain",
+            "Shin Splints",
+            "Wound"
+        ]
+    },
+    {
+        "bodypart":"Shoulders",
+        "bpinjuries":[
+            "Contusion",
+            "Dislocation",
+            "Fracture",
+            "Hyperextension",
+            "Rotator Cuff",
+            "Strain",
+            "Sprain",
+            "Tendonitis",
+            "Wound"
+        ]
+    }
+]
