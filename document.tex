@@ -1,0 +1,192 @@
+\documentclass[10pt,twocolumn]{article}
+
+% use the oxycomps style file
+\usepackage{oxycomps}
+
+% usage: \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+% read references.bib for the bibtex data
+\bibliography{references}
+
+% include metadata in the generated pdf file
+\pdfinfo{
+    /Title (The Occidental Computer Science Comprehensive Project: Goals, Timeline, Format, and Advice)
+    /Author (Justin Li)
+}
+
+% set the title and author information
+\title{TAC: Athletic Training Web Application Connecting Trainers, Athletes, and Coaches
+}
+\author{Amaia McCoy}
+\affiliation{Occidental College}
+\email{amccoy@oxy.edu}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The physical health of a college athlete is of great importance to the athlete, their coaches, and their athletic trainers. In order to keep track of an athlete's physical health, athletic trainers have the responsibility to perform  injury examinations, report injuries, treat injuries, and provide/advise further consultation with other medical professionals. Along with this, they must also provide athletes with injury preventive taping, assign rehabilitation exercises, and set up athletes on rehabilitation machines. 
+
+Keep in mind that athletic trainers work with more than one team and work with more than one athlete. And because there are an abundance of athlete's that trainers work with, most of the responsibilities mentioned above must be done simultaneously. Especially, when athlete's can request for most of the treatments mentioned previously, and these requests are usually made while an athletic trainer is working with another athlete. This distracts an athletic trainer's attention from one athlete to another, which leads to a longer consultation with the athlete before the interruption, or shorter consultations with other athletes.
+
+This also applies to Occidental’s Athletic Trainers use a system for tracking athlete injuries called ATS (Athlete Tracking System). It is a web application with tedious navigation and a UI design that is not considered to be smooth and sleek. 
+
+The ATS can however store not only an athlete’s injury, but also their rehab exercises for that injury. The main issue with this is that this only accessible to the athletic trainer and not the athlete who will be doing these rehab exercises.
+
+The approach to these problems is to create a web application that gives trainers the ability to assign rehab exercises to athletes, athletes will have the access to view their rehab exercises, and coaches will have an insight on their athletes’ injury progress.
+
+\section{Technical Background}
+A web application is made of a front end and a back end. This web application focuses on the front end of a web application which is the user interface and user design. This is the side of the app that the user interacts with, accesses the app, could use any common web browser like Google or Firefox. For the data that would be used in the application, all of it will be stored in JSON files due to the scope of the project.
+
+\subsection{Athletic Training}
+Athletic training is different at every school on every level. As mentioned before there are multiple stress points for any athletic trainer, but to focus on TAC's purpose and its value to athletic trainers at Occidental, we need to focus on what the Occidental athletic trainers do on a day to day basis. And to do this, it is necessary to describe how injuries are tracked, how communication between athletes and coaches is done, and how rehab is given to injured athletes.
+
+Firstly, when an athlete needs to report an injury it is either immediately after it occurred or the day or days after it occurred. Because of the difference between the day of injury and the day the injury has been reported, both dates need to be distinguished and logged. Typically, if the report of an injury is immediately after, an athlete can go directly to the training room without appointment, but if it it is reported later, they need to set an appointment to be seen. 
+
+After the athlete reports their injury, the athletic trainer will then conduct a injury evaluation, provide a diagnosis of what type of injury the athlete has, and advise the athlete on what to do next. If the injury is manageable or not ready for rehabilitation, the trainer typically suggests treatment that helps with recovery, like icing an ankle. If the injury is not manageable and requires a longer recovery time, rehab and treatment are given to athletes. Typically rehab exercises are given immediately after the injury evaluation. After this one time, the rehab exercises are not always logged into ATS as rehab, but is logged in the notes section of the injury.
+
+The problem that arises from this is that athletes do not typically remember their rehab exercises right away and how to do them correctly. Because of this there is a constant start and stop for both the trainer and athlete to get just one rehab exercise done correctly. Keep in mind that Occidental's athletic trainers are personable and try to provide one-on-one service to ensure every athlete is seen and heard. Along with that, there is a constant flow of athletes walking in and out of the training room for treatment, rehabilitation, to get get taped, and to report injuries. TAC is being developed to at least minimize the amount of time spent on trying to work out what rehab exercises need to be done and how to do every exercise.
+
+
+\section{Prior Work}
+The National Collegiate Athletic Association launched a web based platform of their injury report system, called the Injury Surveillance System at the beginning of the 2004 academic year.\cite{ncaa} A web based platform is software used to provide access to an application or service via the internet rather than having to download the software to gain access.
+
+The Injury Surveillance System created by the National Collegiate Athletic Association was paper-based before it was web-based. There were issues with having injury reports mailed or fax to the NCAA, which lead trainers to writing two reports every time, and the process of mailing or faxing became time consuming. So when the Internet became prominent, the NCAA decided to make the system a web-based platform. 
+
+Its purpose was to collect athlete injury data from various sports based on injury, academic year, exposure, sport seasons, athlete-exposure, and time loss. All of this would lead to a better understanding of whether a rule change by the National Collegiate Athletic Association would increase or decrease the amount of sport injuries, a rule change needed to be in place, and/or help institutions with risk-management based on activities that put athletes at risk.
+
+This system has proved to be of great assistance, especially when it comes to concussions, since the NCAA required all institutions to have concussion management plans in place for all sports in 2005.\cite{ncaa}
+The system used by the NCAA does not help athletic trainers though, like the system Occidental's athletic trainers use.
+
+Athlete Tracking System(ATS) has two types users and two different views in the system. Which is where the different types of users for TAC comes from. The difference between the project TAC and ATS is that TAC will include a third user, the coach, and allow athletes the chance to utilize the app more unlike ATS does. As of right now in ATS there is an Athlete Portal that is primarily used to sign documents and update athlete information. 
+
+ATS is not the only athlete tracking system that is being used by athletic organizations. One application that inspired the use of assigning rehab exercises to athletes is CoachMePlus\cite{coachmeplus}. CoachMePlus has many appealing features for different levels of athletic training and for other fields that would utilize the app. In CoachMePlus there is program building for workouts that can be assigned to athletes which is where the idea to assign rehab exercises came from. 
+
+CoachMePlus also includes wellness questionnaires which was included in the initial proposal of TAC. The issue with a wellness questionnaire in TAC is who would be allowed to see the results of these wellness questionnaires and whether. Another feature that was considered for TAC that CoachMePlus has is the in-app messaging. This was not chosen to be a feature in the app because as of right now coaches, athletic trainers, and athletes communicate in person or through text or email. And because of this there was doubt on whether or not the athletes would actually utilize this part of the app and be aware of notifications of a message.
+
+One other app that exists is Sports Injury Clinic\cite{sic} which is more closely related to TAC. This app lists the possible injuries,their possible treatments, and possible rehab to be done. All three provide images and videos to get a visual understanding of the injury, the treatment, and the rehab. This app has the ability to be used for personal use. Sports Injury Clinic provides athletes with journals and reminders. Providing a journal feature for student athletes would not be of importance nor used in TAC because the journal an athlete would use for their injury is would be redundant because noting anything of the injury would be completed by the athletic trainers when inputting and updating injuries in the system.
+
+\section{Methods}
+This front end focused web application, TAC, was built with the help of the platform  to Visual Studio Code and the following languages: ReactJS, Node.js, and Bootstrap. Additionally, to maintain what each user is looking for from TAC, user interviews and user testing were conducted to determine what the user wanted or needed from the app and whether or not TAC met those wants or needs. The three types of users that were involved in the user interviews were athletic trainers, athletes, and coaches at Occidental College. 
+
+The primary focus out of these three users is the athletic trainer because this web application is designed and based on solving the problems they face with the current system they use and alleviate the stress they face. Therefore user testing was done with the athletic trainers only.
+
+In TAC, athletic trainers have the ability to track athlete injuries just as they do in their current system, ATS. There are differences between TAC and ATS though. TAC displays all injuries of an athlete after clicking on the injuries tab rather than having to click on each injury in order to see the necessary or wanted information based on the Occidental athletic trainer user interviews. Furthermore, also readily displayed is the athlete search button to be able to look up an athlete by first or last name, which is what ATS did not offer for the athletic trainers by only allowing searches by last name.
+
+In relation to the athletic trainer's view of the app, athletes and coaches are given the chance to view injuries as well. Athletes and coaches can now visibly see how an injury is progressing from out of play to back to play. The coach's view of the app would be similar to a monitoring system that would function under a green, yellow, and red light system. Green next to an athlete means cleared to play, yellow would mean no physical contact or in the process to be cleared, and red would mean injured and not cleared to play. This same stop light system would be implemented in the athlete's view of the app along with their rehab exercises.
+
+Lastly, athletic trainers have the ability to assign rehab exercises to their athletes through TAC and can attach a video link for the exercise, so that it does not require them to show the athletes themselves. Of course, notes will also be attached to the rehab exercise assigned to the athlete because not every athlete will rehabilitate their injury the same way due to different types of pain level and depending on the trainers' advisory.
+
+With that in mind, the athlete will not only be able to see the progress of their injury, but will also see the rehab exercises that they need to do for injury rehabilitation. This will heavily reduce the time spent asking repeatedly for their rehab exercises from their trainer and reduce the amount of distractions that trainers have in the training room.
+
+As mentioned before user interviews and user testing were conducted in order to solidify that this is what athletic trainers are looking for in a injury tracking web application system and also that this app is deemed beneficial to the communication between athletes, athletic trainers, and  coaches.
+
+The first interview conducted with the athletic trainers determined that they wanted and needed a system that looked visually appealing, had easier navigation, and readily displayed the most important information about an athlete's injury or anything else that they deemed necessary to be shown. During this interview, a demonstration of how each athletic trainer goes through the process of documenting an athlete's injury was conducted from an in-person evaluation to logging the information into their system, ATS. Along with that demonstration, athletic trainers were asked to show the different features within ATS that they liked and disliked.
+
+The first interviews conducted with the athletes and coaches were focused on whether or not this web application and what it could offer is appealing and meaningful to them. The athletes and coaches interviewed all showed immense interest in having an application that helps them understand where an injury's progress is and help with reducing the amount of communication that happens between coaches, athletes, and athletic trainers. In particular athletes were excited about having the ability to see their rehab exercises through an app along with a video and notes. They expressed that they would utilize that part of the web application the most.
+
+The second interview conducted with the athletic trainers consisted of showing a few paper mock-ups to get a better understanding of how they envision a better injury tracking system will look like. With these paper mock-ups, changes to to the paper design of TAC then led to the initial coding of the web application. From the second round interviews some key features that were not mentioned in the first interviews were brought up which helped with more ideas for the design of the user interface.
+
+The third interview conducted with the athletic trainers will be along with an small demo of what the athletic trainer dashboard will look like. From this interview, TAC was determined to be going in the right direction in terms of design because each athletic trainer mentioned how even just the small demo alone was more visually appealing than ATS.
+
+The last part of the web application's development was to conduct user testing of a working athletic trainer side of the application. From the user testing any complaints, considerations, or suggestions were noted in order to further improve TAC to meet the needs and wants of the athletic trainers.
+
+\section{Evaluation Metrics}
+TAC will be evaluated based on two major criteria points. The first criteria is that TAC is rather functional or at least demonstrates the intended solution to the overall problem that it was developed to solve. The second criteria that TAC will be evaluated on is the user feedback from the athletic trainers and if they believe that TAC is visually and conceptually better than their current system ATS.
+
+This first criteria will be measured by the functionality of the web application. Functionality in this case is that every feature in the app does exactly as it says it does. As as well the data that is to be retrieved is found or shown, depending on the purpose of the feature. For example, a search bar should actually search through a list of names to find the name being looked for and once clicked, it should direct the user to the intended profile they were looking for. Secondly, the app is functional if every button has an intended purpose or use within the app that is deemed reasonable and useful.
+
+The second criteria will be measured by the one user, the athletic trainers, responses to the app. The app should have positive responses from the athletic trainers. If the app is not completed entirely, the concept and intent of the app should still be clearly shown through a demonstration and during user testing. After the demonstration and user testing, athletic trainers should give feedback on the app. 
+
+The feedback given will be based on questions that ascertain to the app. Does the app demonstrate what it set out to do? Is the app, in comparison to your current system, in terms of design better? And finally, in the state in which TAC is in, would you consider using this app? These are the questions that will be asked to determine the second criteria evaluation.With both criteria being considered in the evaluation of the web application, a grade ranging from A-F can be made.
+
+A grade of A will be a fully functioning app for the athletic trainers that retrieves data, saves data, and displays data in the web application. Also, on the athlete and coaches side, a functional app where all information is displayed and easy to understand from one look.
+Overall, the app should maintain a form of communication between the athlete, athletic trainer, and the coach through some type of relation in the app. Along with that, the design receives positive feedback from the athletic trainers, coaches, and athletes. All three groups of users have tested the app, and believe that it would be beneficial to implement and believe the app to be better than what the original system they are working with is.
+
+A grade of B is a somewhat functioning app for each user of the app. The athletic trainers side of the app is fully functional, but the athletes and coaches side of the app are not functional. By functional, that means that each side of the app alone are in working condition, but when communicating or connecting data between each other there is the occasional breakage. This can be between the athlete and the athletic trainer assigning rehab or between the athletic trainer and coach for updating athlete injury progress. And at least one out of the three user groups has tested the app and has given positive feedback in regards to design and functionality.
+
+A grade of C is a working app and an app that is either a little or not functional for at least the athletic trainer side of the app. The app is focused on the communication between athletes, coaches, and athletic trainers, but the most important user of the app is the athletic trainer since all information cascades down starting from them. Therefore as long the ability to report and track athletes is able to be done and rehab exercises have the ability to be shown, this app will be given a C. An additional requirement for a C web application is that despite the condition of the app, users still give positive feedback, and still would think of using or implementing the app instead of the current system being used.
+
+A grade of D is an app that does not display any form of data within it. It is primarily just a skeleton of an app focused only on the design and not on how data is passed through it. The app does show at least on user's view, but not how it will pass athlete's information from one page to another. Additionally, if at least one interview and one user test was conducted, then the criteria on user interviews and user testing has been met, but not in an effective matter, therefore, an evaluation of D will be given.
+
+A grade of F is not producing an app that runs. There is no physical evidence of what was worked on and there is no attempt to show at least one users side of the app. Furthermore, if no user interviews and no user testing was done this app does not pass the evaluation. This is because this is also a major part of the project regardless if you have a running app or not. If no interviews were conducted and not one user testing was conducted, then the design and of the app does not matter based on methods and based on the metrics set.
+
+
+
+\section{Evaluation Results and Discussion}
+Before going into the results that were given from TAC based on the methods used and evaluation metrics, the limitations of the production of this should also be mentioned. The limitations that TAC faced were time constraints, which shaped the scope of the project and what methods were able to done and what metrics were also able to be met. The time constraint for TAC was that it had to be done in a semester, which is approximately four months. On top of the time constraint, TAC was also limited to the data that can be used to display information the way it TAC was designed to show. The data used in the app was created in order to ensure that the data will actually display in the app.
+
+The coding of TAC did not start until after initial user interviews and after doing a few tutorials to ensure that there was an understanding of ReactJS. Once there was an understanding, the initial user interview with the athletic trainers that was conducted resulted in a complete overview of ATS and encouraged and inspired the different ideas had for the UI design of TAC. 
+
+The first athletic trainer that was talked to was the head director of the department, who has been using ATS the longest. The main reason why the head director of the department continues to use ATS is because of its ability to be customized to the needs of the user by the user. Before jumping into the coding of TAC, there was a lot of consideration of how much TAC can be customized, and considering the limitations, TAC was made in a default manner without any customization allowed to be made by the user. 
+
+After conversing with the head director, user interviews were also conducted with the other athletic trainers. These interviews provided information that may not have been covered in the first interview. Features like clicking on a document and it opening up in the browser another was for athlete search to be accessible and also be able to search by first name and last name, not just first name. In TAC, the athlete search is the first thing you see on the athletic trainer's dashboard. As of now the search does not give the intended result which is the athlete you are looking.
+
+The next thing done was paper mock-ups of the athletic trainer view in TAC. This included the dashboard, what it would like on the athletic trainer's end of the app when clicking on an athlete. In that view, there were lists drawn of the rehab and injuries, along with what the athlete's demographics would be displayed as. With the paper mock-ups a second round of interviews was conducted with the athletic trainers. The purpose of the paper mock-ups was to ensure that the flow of how the app would go conforms to what the athletic trainers deem to be the best and also to show how data in TAC was going to be organized. From the interviews it was determined that the flow of the app was good and the layout seemed to be what was expected of an injury tracking app.
+
+The last user interview which was also the first user test was of a small demo after coding for TAC for the first time. As mentioned in a previous section, the feedback just from the initial look of the first page of the athlete dashboard was extremely positive. Most of the responses from the athletic trainers were that it already was visually better that ATS, the system they already use. From the app continued to progress to the next stage of the app which was accessing an athlete's profile.
+
+TAC's athletic trainer view of an athlete's profile shows all the demographics that the selected athlete has. Then there are two tabs that navigate to a list of injuries and the other to a list of rehab. Within the table list of the injuries and rehab, there is the ability to add injuries or rehab to an athlete's profile. Which is what the app should be able do. The issue with this part of the app is that the injury list and rehab list do not update unfortunately.
+
+Overall, focusing on the results from TAC runs and only shows the athletic trainer's view of the app. As time started to dwindle down to the completion date of the app, there were many roadblocks when programming the athletic trainer's view of the app. This primarily stemmed from the ability to save information and add to the JSON file that stored athletes and their injuries. It was too late to backtrack to changing where the created data would be stored and retrieved from, so there was focus on ensuring that the athletic trainer's view was as functional as possible. The forms for adding injuries and rehabilitation exercises do not actually save the data inputted on submit.
+
+TAC meets the goal of providing easily and readily accessible information to the athletic trainer. When navigating from one screen to another, the trainer sees the information they want to see immediately rather than having to go from one screen to the next just to get the information they want right away. TAC also meets the ability of visually being better the design of ATS. This is based on the feedback given from the athletic trainers. TAC does not function well based on the metrics it is being measured on because of the forms not being able to commit data to the table. TAC did complete all of the milestones it was meant to complete. For example, the user interviews and the user testing which was completed and did help with the iterative design process of TAC.
+
+\section{Ethical Considerations}
+In this project, all three levels of ethics are considered. The personal ethics of the project falls on the athletes and trainers. The reporting of an injury is entirely reliant on what the athlete chooses to inform their athletic trainers about.
+
+The type of personal ethics that could possibly occur with athletes is response bias. Athletes could possibly embellish the truth whether it be about their pain level with a physical injury or they may not report the injury at all. This may occur from the app because athletes are given the permission to view how far along their injury is coming along. This may improve the work ethic of the athlete and encourage the athlete to be honest about their injury so that they can see more progress. Or it can go in the direction of the athlete not wanting to be honest in order to see more progress. This is very likely happen because athletes do not even utilize injury prevention methods that are available to them according to the following study. 
+
+The study was conducted on field hockey players and the study found that the players had a passive attitude when it came to injury prevention, which is what athletic trainers do for athletes before or after an injury occurs. In the article about the study it said that, "some senior players also reported feeling they would be letting their team down, whilst some younger players did not wish to be perceived as weak by reporting injuries. Other athletes discussed hiding injuries before big games to ensure that they are selected, or after joining a new club to ensure that they made a good impression. Athletes put this down to their own internal guilt or shame of having suffered an injury, as well as their own personal ambitions or desires to play".\cite{fieldhockey} 
+
+As you can see, athletes and their truthfulness about their injury would be based on what they feel is morally right, which is a personal ethic and would lead to them either reporting untruthfully, or not reporting about their injury to athletic trainers. And this is how response bias would apply to the athletes and not the athletic trainers and coaches who would use the web app in this project.
+
+TAC will mitigate personal bias from athletes by giving control of permission to view progress from the athletic trainer. With the athletic trainer's thoughts, considerations, and discretion, they will be able to determine if it would be beneficial for an injured athlete to see their progress through the app along with their treatment.
+
+Professional ethics applies to the athletic trainers and the coaches because both have a code of conduct or handbook that addresses what actions constitute good behavior in the workplace and the responsibilities that one has in the workplace. For example, athletic trainers would not only abide by the code of conduct that the National Athletic Trainers' Association, but would also have to abide by the employee handbook that the school would have.
+
+The ethical concern is in the power that would be given to coaches. Although, coaches have a code of conduct to follow their decisions for their players or team are highly dependent on the state of their athlete, physically. With TAC, coaches would have access to their athlete's injury so that they are more aware of their athlete's progress. The issue with this is that coaches would have the ability to use the athlete's injury against them. This is not always in a negative way though. Coaches may not push an athlete in practice based on what they saw from the athlete's injury's stage in progress due to fear of the athlete being re-injured. While other coaches may disregard an athlete based on the progress and continue that behavior even after the athlete healed.
+
+As for athletic trainers, their power lies in the information that is allowed to be given to coaches and athletes and what information is not allowed to be given. Thankfully though, athletic trainers are all certified under the National Athletic Trainers' Association, which has a code of conduct for all trainers to follow. A big part of what trainers are allowed to inform coaches about lies in their rules which are quite similar to the HIPAA rules that doctors have to follow. The issue of power, and the issue of privacy, consent, and security go hand in hand for this project. The power to distribute the state of an injury of an athlete could lead to the violation of privacy, consent, and security. Without the power being given to one authority, the other issues that follow would not possibly happen.
+
+In order to mitigate the ethical issue of power, the app would have to follow the rules, laws, or code of conduct that the athletic trainers would have to follow. This would possibly prevent athletic trainers from abusing their power. This would also apply to the coaches as well. To add, the issue of power mentioned in the section beforehand, would then be shared amongst the athlete and the athletic trainer. Basically, the power to share information would no longer be in the hands of the athletic trainers only, but also in the hands of the athletes. When an athlete reports their injury to their athletic trainer, they have the power to give as much information as they they want to their trainer. Then that power to pass on that information to another party, an athlete's coach, lies in the hands of an athletic trainer. 
+
+Although, this can not be prevented, due to the fact that injuries have to be reported to a coach, athlete's can be made aware of what information was told to their coach and what was not told to their coach. The application would send a notification, after an athletic trainer submits an athlete's injury report and their current status of play, to the coach and the athlete so that no one feels out of the loop.
+
+As for social ethics in the project, it would apply to the medical history and personal information that athletic trainers and coaches are privy to. To add, athletic trainers may face more pressure when deeming an athlete ready to play or injured. Although, each level of ethics apply to the project, the type of ethical concern is different within each level.
+
+Furthermore, the issue of privacy, consent, and security of an athlete's medical history and personal information, falls under the ethical level of social ethics. An athletic trainer is allowed to have access to an athlete's medical history and any personal information that is deemed to be important in the treatment of an athlete. That includes insurance, medical conditions, allergies, past injuries, prescribed medication, and diagnosed mental health condition. The issue of privacy, consent, and security being breached ethically happens with the passing of information from an athletic trainer to an athlete's coach. 
+
+Access to an athlete's information is only given to the athletic trainer, but an athlete's injury or medical condition that would affect a player's quality of play or would put the player's health in danger, are all passed on to the coach so that they are aware and cautious of their player in practice or games.
+
+Consent, privacy, and security are extremely important when dealing with an individual's medical history and personal information. And because of that the web application will be divided into three separate user screens. 
+
+An athletic trainer's user screen would be the ability to view an athlete's information and only having the ability to report injuries. An athlete's user screen would have the ability to edit, add, or remove any piece of information from their medical history or their personal information. And coaches are only sent notifications of an athlete's status, which would reduce the chance of unwanted and non-sports related health issues from being disclosed to a coach by an athletic trainer. This all helps with the protection of an athlete's privacy. 
+
+The security behind these user screens is that you must be an athlete or an athletic trainer in order to access an athlete's personal information. And to possibly prevent impersonation of one or another, using a school's student and staff identification number would help determine whether or not the person logging in to the web application is a student athlete or faculty. 
+
+Another social ethic consideration is the pressure and stress that the athletic trainers will begin to face when coaches are capable of viewing the progress of an athlete's injury\cite{atrole}. If the coach believes that the athlete's progression to being healed is going too slow and they need that athlete, coaches may pressure athletic trainers to either start a more rigorous and aggressive rehab program so that they athlete heals at a faster rate. This also applies to the athletes also pressuring the athletic trainers in the same manner. This can be mitigated by giving primary control to the athletic trainer just as mentioned when considering personal bias.
+
+Overall, this project has many ethical issues in each level of ethics. Response bias, power, and privacy, consent, and security. Despite that, there are solutions to minimize, prevent, or exclude these biases or issues in the project. These solutions are as easy as developing restrictions between each type of user, or simply notifying all involved parties of what information is being passed on. It is hard to avoid ethical issues, but it is not hard to find ways to suppress them.
+
+\section{Appendices}
+\subsection{Replication Instructions}
+In order to run TAC, you need to check to see if Node.js installed on your computer and also and to access the code itself, you should have an IDE installed that is compatible with ReactJS. TAC was created in Visual Studio Code.
+
+\subsection{Code Architecture Overview}
+In App.js controls the navigation from one page to another page. In this code it handles the navigation from the trainer dashboard to the the athlete profile that was clicked on. The athlete profile route is wrapped in a map function so that the list of athletes is looped through and the one that was selected, the path name will match from the code where the athlete's name is clicked on. 
+
+TrainerDashboard.js simply displays the trainer's initial page. THis includes the athletes listed and a search bar.
+
+TVProfile.js stores the athlete's, who was clicked on, name from taking it from the path in the url. From there it is able to pass that information to the Demographics.js, Injuries.js, and Rehab.js. The athlete's name being passed to these components of the athlete's profile will help with mapping the information from the JSON file to the elements that display the data retrieved.
+
+\printbibliography
+
+\end{document}
